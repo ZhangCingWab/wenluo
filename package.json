@@ -1,0 +1,14 @@
+{
+  "name": "article-site",
+  "version": "1.0.0",
+  "description": "仿洛谷风格的文章 / 论坛 / 比赛社区（含后台审核）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "multer": "^1.4.5-lts.2"
+  }
+}
