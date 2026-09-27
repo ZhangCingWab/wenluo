@@ -13,8 +13,10 @@ const path = require('path');
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 const ROOT = __dirname;
-const DATA_DIR = path.join(ROOT, 'data');
-const UPLOAD_DIR = path.join(ROOT, 'uploads');
+// Render 持久化存储路径
+const RENDER_DISK_PATH = process.env.RENDER_DISK_PATH || '';
+const DATA_DIR = RENDER_DISK_PATH ? path.join(RENDER_DISK_PATH, 'data') : path.join(ROOT, 'data');
+const UPLOAD_DIR = RENDER_DISK_PATH ? path.join(RENDER_DISK_PATH, 'uploads') : path.join(ROOT, 'uploads');
 const DB_FILE = path.join(DATA_DIR, 'db.json');
 
 for (const d of [DATA_DIR, UPLOAD_DIR]) {

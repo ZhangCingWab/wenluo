@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: wenluo-community
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 10000
+    disk:
+      name: data
+      mountPath: /opt/render/project/data
+      sizeGB: 1
